@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 1</title>
+    <link rel="stylesheet" href="ex1.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Calculadora de Média e Situação do Aluno</h2>
+      <form id="formulario">
+        <label for="nota1">Nota da 1ª prova:</label>
+        <input type="text" id="nota1" required />
+        <label for="nota2">Nota da 2ª prova:</label>
+        <input type="text" id="nota2" required />
+        <label for="faltas">Número de faltas:</label>
+        <input type="text" id="faltas" required />
+        <button type="button" onclick="calcularMediaESituacao()">
+          Calcular
+        </button>
+      </form>
+      <div id="resultado"></div>
+    </div>
+  </body>
+  <script src="ex1.js"></script>
+</html>
