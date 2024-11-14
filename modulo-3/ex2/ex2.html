@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+
+<body>
+    <div id="num" style="font-size: 24px; font-weight: bold;">0</div>
+    <button id="incrementar">incrementar</button>
+    <button id="decrementar">decrementar</button>
+
+    <script>
+        let cont = 0
+        const numD = document.getElementById("num")
+        
+        function verificador(){
+            numD.textContent = cont
+            numD.style.color = cont %2 === 0 ? 'blue' : 'green'
+        }
+
+        document.getElementById('incrementar').addEventListener('click', () =>{
+            cont++
+            verificador()
+        })
+
+        document.getElementById('decrementar').addEventListener('click', () =>{
+            cont--
+            verificador()
+        })
+        
+    </script>
+</body>
+</html>

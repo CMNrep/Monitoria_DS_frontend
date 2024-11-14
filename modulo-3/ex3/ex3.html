@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+<body>
+    <div id="cro">00:00</div>
+    <button id="iniciarCro">Iniciar</button>
+    <button id="reiniciarCro">Zerar</button>
+
+    <script>
+        let segundos = 0
+        let interval = null
+        
+        function corrigirCro(segundos){
+            const minutos = Math.floor(segundos/60)
+            const segun = segundos % 60
+
+            return `${String(minutos).padStart(2, '0')}:${String(segun).padStart(2, '0')}`
+        }
+
+        function atualizarCro(){
+            document.getElementById('cro').textContent = corrigirCro(segundos)
+        }
+
+        document.getElementById('iniciarCro').addEventListener('click', () => {    
+            if(!interval){                
+                interval = setInterval(() => {
+                segundos++
+                atualizarCro()
+            }, 1000)
+            }
+        })
+
+        document.getElementById('reiniciarCro').addEventListener('click', () => {
+            clearInterval(interval)
+            interval = null
+            segundos = 0
+            atualizarCro()
+        })
+    
+    
+    </script>
+</body>
+</html>

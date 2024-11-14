@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4</title>
+</head>
+<body>
+    <form id="formu">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" maxlength="11" minlength="11" required></input><br>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" maxlength="9" minlength="8" required><br>
+     
+
+        <button type="button" id="enviar">Enviar</button>
+    </form>
+    <span id="resultado" style="color: red;"></span>
+
+    <script>
+        document.getElementById('enviar').addEventListener('click', () => {
+            let nome = document.getElementById('nome').value.trim()
+            let email = document.getElementById('email').value.trim()
+            let cpf = document.getElementById('cpf').value.trim()
+            let telefone = document.getElementById('telefone').value.trim()
+            const resultado = document.getElementById('resultado')
+            
+            let err = ''
+
+            if( nome.split(' ').length < 2) err += 'Nome inválido. '
+            if( !email.includes('@')) err += 'Email inválido. '
+            if( cpf.length != 11) err += 'CPF inválido. '
+            if( telefone.length < 8 || telefone.length > 9) err += 'Telefone inválido. '
+
+            resultado.innerHTML = err || 'Dados enviados com sucesso.'
+            setTimeout(() => {
+                document.getElementById('resultado').innerHTML = ''
+            }, 5000)
+        })
+    </script>
+</body>
+</html>

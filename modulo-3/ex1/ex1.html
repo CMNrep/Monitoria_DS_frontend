@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+<body>
+    <select id="selecionarCor">
+        <option value="" disabled selected>selecionar</option>
+        <option value="pink">rosa</option>
+        <option value="lightblue">azul claro</option>
+        <option value="green">verde</option>
+    </select>
+    <div id="divCor" style="background-color: blueviolet; width: 200px; height: 200px; border: 1px solid; margin: 10px 2px 0px 100px;"></div>
+    <script >
+
+        const corSelecionada = document.getElementById("selecionarCor");
+        const divCor = document.getElementById("divCor");
+
+        corSelecionada.addEventListener('change', () => {
+            divCor.style.backgroundColor = corSelecionada.value
+        })
+    </script>
+</body>
+</html>
